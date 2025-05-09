@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced JS Event Assignment</title>
+    <link rel="stylesheet" href="C:\Users\USER\Desktop\FEB 2025 COHORT\web dev class\week 6 assignment\css\style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Interactive JS Playground</h1>
+        <button id="themeToggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+    </header>
+
+    <main class="container">
+        <!-- Event Handling Section -->
+        <section class="event-section card">
+            <h2>Event Handling 🎈</h2>
+            
+            <div class="grid-container">
+                <div class="event-box">
+                    <button id="clickButton" class="neumorphic-btn">Click Me!</button>
+                    <p id="clickOutput">Button not clicked yet</p>
+                </div>
+                
+                <div class="event-box hover-box">
+                    <p id="hoverOutput">Hover over this box</p>
+                </div>
+                
+                <div class="event-box">
+                    <input type="text" id="keypressInput" placeholder="Type something...">
+                    <p id="keypressOutput">No keypress detected yet</p>
+                </div>
+                
+                <div class="event-box secret-box">
+                    <p>Double click or long press for a secret!</p>
+                    <p id="secretOutput" class="hidden">🎉 You found the secret!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Elements Section -->
+        <section class="interactive-section card">
+            <h2>Interactive Elements 🎮</h2>
+            
+            <div class="grid-container">
+                <div class="interactive-box">
+                    <button id="colorChanger" class="neumorphic-btn">Change My Color</button>
+                    <div id="colorHistory" class="color-history"></div>
+                </div>
+                
+                <div class="image-gallery">
+                    <div class="gallery-controls">
+                        <button id="prevBtn" class="neumorphic-btn"><i class="fas fa-chevron-left"></i></button>
+                        <div class="slide-indicator">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <button id="nextBtn" class="neumorphic-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="slider-container">
+                        <div class="slide active">
+                            <img data-src="c:\Users\USER\Pictures\nature 4.jpg" alt="Nature image 1" class="lazy">
+                        </div>
+                        <div class="slide">
+                            <img data-src="c:\Users\USER\Pictures\nature.jpg" alt="Nature image 2" class="lazy">
+                        </div>
+                        <div class="slide">
+                            <img data-src="c:\Users\USER\Pictures\nature 2.jpg" alt="Nature image 3" class="lazy">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tabs-container">
+                    <div class="tabs">
+                        <button class="tab-button active" data-tab="tab1"><i class="fas fa-info-circle"></i> Info</button>
+                        <button class="tab-button" data-tab="tab2"><i class="fas fa-cog"></i> Settings</button>
+                        <button class="tab-button" data-tab="tab3"><i class="fas fa-chart-bar"></i> Stats</button>
+                    </div>
+                    <div class="tab-content active" id="tab1">
+                        <h3>Welcome to the Interactive Playground</h3>
+                        <p>Explore all the features of this advanced JavaScript demonstration.</p>
+                    </div>
+                    <div class="tab-content" id="tab2">
+                        <h3>Customize Your Experience</h3>
+                        <div class="setting-item">
+                            <label for="animationToggle">Animations:</label>
+                            <label class="switch">
+                                <input type="checkbox" id="animationToggle" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="tab3">
+                        <h3>Interaction Statistics</h3>
+                        <p>Button clicks: <span id="clickCount">0</span></p>
+                        <p>Key presses: <span id="keypressCount">0</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Form Validation Section -->
+        <section class="form-section card">
+            <h2>Advanced Form Validation 📋</h2>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required>
+                    <span id="nameError" class="error-message"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                    <span id="emailError" class="error-message"></span>
+                    <div id="emailChecking" class="checking-message hidden">
+                        <i class="fas fa-spinner fa-spin"></i> Checking availability...
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" required>
+                    <div class="password-strength">
+                        <div class="strength-meter"></div>
+                        <span class="strength-text">Weak</span>
+                    </div>
+                    <span id="passwordError" class="error-message"></span>
+                    <div id="passwordRules">
+                        <p>Password must contain:</p>
+                        <ul>
+                            <li id="lengthRule">At least 8 characters</li>
+                            <li id="numberRule">At least 1 number</li>
+                            <li id="specialRule">At least 1 special character</li>
+                            <li id="uppercaseRule">At least 1 uppercase letter</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <button type="submit" class="submit-button neumorphic-btn">
+                    <span>Register</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+                <div id="formSuccess" class="success-message hidden">
+                    <i class="fas fa-check-circle"></i> Form submitted successfully!
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <div id="notification" class="notification hidden"></div>
+
+    <script src="C:\Users\USER\Desktop\FEB 2025 COHORT\web dev class\week 6 assignment\css\javascript\script.js"></script>
+</body>
+</html>
